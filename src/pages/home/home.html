@@ -1,17 +1,59 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title >Rota Shift</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+  <div style="margin: 20px; padding: 70px 0px; height: 100%;">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed >Date</ion-label>
+      <ion-datetime displayFormat="DDD, DD/MM/YYYY" placeholder="{{datePicker}}" [(ngModel)]="datePicker" (ngModelChange)="getShift($event)"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item text-center >
+
+
+
+      <h1 class="shiftNumber"> {{rotaShift}} </h1>
+
+
+    </ion-item>
+
+
+  </ion-list>
+
+  </div>
+
+  <!--<ion-grid>-->
+
+    <!--<ion-row justify-content-center>-->
+
+      <!--&lt;!&ndash;<p>{{dateNow}}</p>&ndash;&gt;-->
+
+
+
+    <!--</ion-row>-->
+
+    <!--<ion-row justify-content-center>-->
+
+
+
+
+
+
+    <!--</ion-row>-->
+
+
+  <!--</ion-grid>-->
+
+
+
+
+
 </ion-content>
