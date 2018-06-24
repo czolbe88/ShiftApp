@@ -44,38 +44,71 @@ export class AboutPage implements OnInit {
     }
 
     var diff: number = thisTime.getTime() - this.D1R1N1R4.getTime();
-    var elapsedDays: number = Math.abs(Math.floor(diff / (1000 * 60 * 60 * 24))); //elapsed number of days
+    var elapsedDays: number = Math.floor(diff / (1000 * 60 * 60 * 24)); //elapsed number of days
     console.log("elapsed days: ", elapsedDays);
 
     var shiftNum: {} = 0;
 
-    switch(elapsedDays % 8){
-
-      case(1): shiftNum = {Day: 1, Night: 4};
-        break;
-
-      case(2): shiftNum = {Day:2 , Night: 3};
-        break;
-
-      case(3): shiftNum = {Day:2 , Night: 3};
-        break;
-
-      case(4): shiftNum = {Day:4 , Night: 1};
-        break;
-
-      case(5): shiftNum = {Day:4 , Night: 1};;
-        break;
-
-      case(6): shiftNum = {Day:3 , Night: 2};
-        break;
-
-      case(7): shiftNum = {Day:3 , Night: 2};
-        break;
-
-      case(0): shiftNum = {Day: 1 , Night: 4};
-        break;
-
+    if(elapsedDays % 8 == 1 || elapsedDays % 8 == -7 ){
+      shiftNum = {Day: 1, Night: 4};
     }
+
+    else if(elapsedDays % 8 == 2 || elapsedDays % 8 == -6 ){
+      shiftNum = {Day:2 , Night: 3};
+    }
+
+    else if(elapsedDays % 8 == 3 || elapsedDays % 8 == -5 ){
+      shiftNum = {Day:2 , Night: 3};
+    }
+
+    else if(elapsedDays % 8 == 4 || elapsedDays % 8 == -4 ){
+      shiftNum = {Day:4 , Night: 1};
+    }
+
+    else if(elapsedDays % 8 == 5 || elapsedDays % 8 == -3 ){
+      shiftNum = {Day:4 , Night: 1};
+    }
+
+    else if(elapsedDays % 8 == 6 || elapsedDays % 8 == -2 ){
+      shiftNum = {Day:3 , Night: 2};
+    }
+
+    else if(elapsedDays % 8 == 7 || elapsedDays % 8 == -1 ){
+      shiftNum = {Day:3 , Night: 2};
+    }
+
+    else if(elapsedDays % 8 == 0){
+      shiftNum = {Day:1 , Night: 4};
+    }
+
+    //
+    // switch(elapsedDays % 8){
+    //
+    //   case(1): shiftNum = {Day: 1, Night: 4};
+    //     break;
+    //
+    //   case(2 ): shiftNum = {Day:2 , Night: 3};
+    //     break;
+    //
+    //   case(3): shiftNum = {Day:2 , Night: 3};
+    //     break;
+    //
+    //   case(4 ): shiftNum = {Day:4 , Night: 1};
+    //     break;
+    //
+    //   case(5 ): shiftNum = {Day:4 , Night: 1};;
+    //     break;
+    //
+    //   case(6 ): shiftNum = {Day:3 , Night: 2};
+    //     break;
+    //
+    //   case(7): shiftNum = {Day:3 , Night: 2};
+    //     break;
+    //
+    //   case(0): shiftNum = {Day: 1 , Night: 4};
+    //     break;
+    //
+    // }
 
     this.emsShift =  shiftNum;
     console.log(this.emsShift);

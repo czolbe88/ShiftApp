@@ -10,7 +10,7 @@ export class HomePage implements OnInit {
 
   datePicker: string;
   rotaShift: number;
-  r3 = new Date( 2017, 5 , 29); //last known rota 3 date
+  r3 = new Date( 2018, 5 , 24); //last known rota 3 date
 
 
   constructor(public navCtrl: NavController) {
@@ -60,7 +60,7 @@ export class HomePage implements OnInit {
     var diff:number = thisTime.getTime() - this.r3.getTime();
     var elapsedDays: number = Math.floor( diff/(1000 * 60 * 60 *24) ); //elapsed number of days
 
-    //console.log(elapsedDays);
+    console.log(elapsedDays);
     var hours: number = thisTime.getHours();
     //console.log(hours);
 
