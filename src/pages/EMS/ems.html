@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      EMS Shift
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="margin: 20px; padding: 70px 0px; height: 100%;">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed >Date</ion-label>
+        <ion-datetime displayFormat="DDD, DD/MM/YYYY" placeholder="{{datePicker}}" [(ngModel)]="datePicker" (ngModelChange)="getShift($event)"></ion-datetime>
+      </ion-item>
+
+
+      <ion-item text-center >
+
+
+        <sub>Day</sub>
+        <h1 class="shiftNumber"> {{emsShift.Day}} </h1>
+
+        <sub>Night</sub>
+        <h1 class="shiftNumber"> {{emsShift.Night}} </h1>
+
+
+      </ion-item>
+
+
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

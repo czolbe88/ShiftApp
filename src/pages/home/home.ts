@@ -1,5 +1,6 @@
 import {Component, OnInit, Optional} from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {formatDate} from '../../utility/dateUtility';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +20,7 @@ export class HomePage implements OnInit {
   ngOnInit(){
 
 
-    this.datePicker = this.formatDate(new Date());
+    this.datePicker = formatDate(new Date());
     this.getShift();
 
     // setInterval(() => {         //replaced function() by ()=>
@@ -37,20 +38,12 @@ export class HomePage implements OnInit {
 
 
 
-  //helper method for date formatting
-   formatDate(date) {
-
-    var dayArray: string[] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    var dayOfWeek: number = date.getDay();
-    var day: number = date.getDate();
-    var monthIndex:number = date.getMonth();
-    var year:number = date.getFullYear();
-
-    return dayArray[dayOfWeek] + ', ' + day + '/' + monthIndex + '/' + year;
-  }
+  //helper method for timezone offset
 
 //Used to update the rota shift
   getShift(d?: string) {
+
+    var utc: number = new Date().getTime();
 
     var testTime: Date = new Date(2018, 6, 16, 7, 55); //testing
     var thisTime: Date = new Date(); //default date = today 0800
